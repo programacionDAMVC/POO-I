@@ -64,6 +64,8 @@ public class TestRectangle {
 		
 		//llamamos a los métodos
 		System.out.printf("Average areas is %.2f%n", getAverageAreas(arrayRectangles));
+		System.out.printf("Average perimeters is %.2f%n", getAveragePerimeters(rectangleList));
+		System.out.printf("Greater Rectangle is %s%n", getGreaterArea(rectangleList));
 	}
 	
 	//método que pasamos una colección (array) de objetos Rectangulo y nos devuelva el 
@@ -80,7 +82,30 @@ public class TestRectangle {
 	}
 	//método que pasamos una colección (arrayList) de objetos Rectangulo y nos devuelva el 
 	//valor medio de loa perímetros	
+	public static double getAveragePerimeters(ArrayList<Rectangle> rectangleList) {
+		double sum = 0;
+		for (Rectangle rectangle : rectangleList) {
+			sum += rectangle.getPerimeter();
+		}
+		return sum / rectangleList.size();
+		
+	}
 	
 	//método que nos devuelva un OBJETO RECTANGLE que tenga la mayor área
+	public static Rectangle getGreaterArea(ArrayList<Rectangle> rectangleList) {
+		Rectangle greaterRectangle = rectangleList.get(0);
+		int greaterArea = rectangleList.get(0).getArea();
+		for (int i = 1; i < rectangleList.size(); i++) {
+			if (rectangleList.get(i).getArea() >  greaterArea) {
+				greaterRectangle = rectangleList.get(i);
+				greaterArea = rectangleList.get(i).getArea();
+			}
+			
+		}
+		return greaterRectangle;
+		
+	}
+	
+	
 
 }
