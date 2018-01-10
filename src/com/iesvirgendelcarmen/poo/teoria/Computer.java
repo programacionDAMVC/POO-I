@@ -55,10 +55,10 @@ public class Computer {
 		this.owner = owner;
 	}
 
-/*	@Override
+	@Override
 	public String toString() {
 		return "Computer [code=" + code + ", brand=" + brand + ", color=" + color + ", owner=" + owner + "]";
-	}*/
+	}
 	
 	public static void main(String[] args) {
 		Computer computer1 = new Computer();
